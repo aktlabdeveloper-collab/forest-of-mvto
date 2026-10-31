@@ -1,0 +1,248 @@
+/* まとの森（Forest Of Mvto）公開ページ — アプリ内の配色（深い藍 × 金）に合わせたスタイル */
+
+:root {
+  --bg: #0d0a1a;
+  --bg-alt: #1a1428;
+  --card: #1e1535;
+  --gold: #d4af37;
+  --gold-light: #f5d76e;
+  --text: #f5ecd7;
+  --text-dim: #c9a96e;
+  --border: rgba(212, 175, 55, 0.3);
+  --maxw: 44rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+/* ヘッダー */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-ja {
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+}
+
+.brand-en {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.85rem;
+}
+
+.site-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+}
+
+/* 本文 */
+
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--gold-light);
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--gold);
+  margin: 2.5rem 0 0.75rem;
+  padding-left: 0.6rem;
+  border-left: 3px solid var(--gold);
+}
+
+h3 {
+  font-size: 1rem;
+  color: var(--gold-light);
+  margin: 2rem 0 0.5rem;
+}
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--gold-light); }
+
+a:hover { color: var(--gold); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+ul, ol { padding-left: 1.4rem; margin: 0 0 1.25rem; }
+
+li { margin-bottom: 0.5rem; }
+
+strong { color: var(--gold-light); font-weight: 600; }
+
+/* テーブル（外部送信規律の一覧など） */
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 34rem;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold-light);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* トップページ */
+
+.hero { margin-bottom: 2.5rem; }
+
+.hero h1 { margin-bottom: 1rem; }
+
+.hero-en {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+.lead { color: var(--text); }
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 40rem) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.1rem 1.2rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.card:hover { border-color: var(--gold); }
+
+.card h2 {
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+  color: var(--gold-light);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+.note {
+  background: rgba(30, 21, 53, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem 1.2rem;
+}
+
+.note h2 { margin-top: 0; }
+
+.note p:last-child { margin-bottom: 0; }
+
+.contact {
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+/* フッター */
+
+.site-footer {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+}
+
+.site-footer p { margin: 0 0 0.3rem; }
